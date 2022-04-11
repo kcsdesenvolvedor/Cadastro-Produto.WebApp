@@ -14,3 +14,7 @@
 
 ### OBS
 <p>Para fazer o teste de passar valor negativo no campo "<strong>Valor</strong>", digite o valor primeiro depois digite o sinal de menos.</p>
+
+## Video demonstrativo do Projeto
+
+![video do projeto](https://github.com/kcsdesenvolvedor/Cadastro-Produto.WebApp/blob/main/src/assets/video_projeto.gif)
