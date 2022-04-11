@@ -1,0 +1,29 @@
+<mat-card class="mat-elevation-z8">
+    <form (ngSubmit)="onSubmit()">
+        <div [formGroup]="produtoForm">
+            <mat-card class="titleCard mat-elevation-z4">
+                <h1>{{data.title}}</h1>
+            </mat-card>
+            <mat-form-field>
+                <mat-label>Nome</mat-label>
+                <input matInput type="text" formControlName="nome">
+            </mat-form-field>
+            <mat-form-field>
+                <mat-label>Estoque</mat-label>
+                <input matInput type="text" formControlName="estoque">
+            </mat-form-field>
+            <mat-form-field class="matTicket">
+                <mat-label>Valor</mat-label>
+                <input matInput id="inputTicket" type="text" required formControlName="valor" placeholder="0,00" currencyMask
+                    autocomplete="off">
+            </mat-form-field>
+        </div>
+        <button type="submit" mat-raised-button color="primary">
+            {{data.btnTitle}}
+        </button>
+
+        <button mat-raised-button (click)="cancel()" color="danger">
+            Cancelar
+        </button>
+    </form>
+</mat-card>

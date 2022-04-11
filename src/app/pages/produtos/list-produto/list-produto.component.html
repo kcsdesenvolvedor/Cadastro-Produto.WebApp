@@ -1,0 +1,56 @@
+<button mat-raised-button (click)="create()" color="primary">
+    Adicionar Produto
+</button>
+<div class="mat-elevation-z8">
+    <table mat-table [dataSource]="produtos">
+      <!-- Id Column -->
+      <ng-container matColumnDef="Id">
+        <th class="white" mat-header-cell *matHeaderCellDef>Id</th>
+        <td mat-cell *matCellDef="let row">{{row.id}}</td>
+      </ng-container>
+  
+      <!-- Nome Column -->
+      <ng-container matColumnDef="Nome">
+        <th class="white" mat-header-cell *matHeaderCellDef>Nome</th>
+        <td mat-cell *matCellDef="let row"><strong>{{row.nome}}</strong></td>
+      </ng-container>
+  
+      <!-- Estoque Column -->
+      <ng-container matColumnDef="Estoque">
+        <th class="white" mat-header-cell *matHeaderCellDef>Estoque</th>
+        <td mat-cell *matCellDef="let row">{{row.estoque}}</td>
+      </ng-container>
+  
+      <!-- Valor Column -->
+      <ng-container matColumnDef="Valor">
+        <th class="white" mat-header-cell *matHeaderCellDef>Valor</th>
+        <td mat-cell *matCellDef="let row">R${{row.valor}}</td>
+      </ng-container>
+
+      <!-- DAtaInclusaoProduto Column -->
+      <ng-container matColumnDef="dataInclusaoProduto">
+        <th class="white" mat-header-cell *matHeaderCellDef>Data de inclusão do produto</th>
+        <td mat-cell *matCellDef="let row">{{row.dataInclusaoProduto | date: "dd/MM/yyyy"}}</td>
+      </ng-container>
+  
+      <!-- Action Column -->
+      <ng-container matColumnDef="action">
+        <th class="white" mat-header-cell *matHeaderCellDef>Ações</th>
+        <td mat-cell *matCellDef="let row">
+          <a type="media_type" routerLink="" (click)="update(row.id)" class="edit" >
+            <i class="material-icons">
+                edit
+              </i>
+          </a>
+          <a routerLink="" (click)="delete(row.id)" class="delete">
+            <i class="material-icons">
+                delete
+              </i>
+          </a>
+        </td>
+      </ng-container>
+      <tr class="table-bar" mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
+  
